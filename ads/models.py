@@ -37,7 +37,7 @@ class Advertiser(models.Model):
 class Category(models.Model):
     """ a Model to hold the different Categories for adverts """
     title = models.CharField(
-        verbose_name=_('Title'), max_length=255)
+        verbose_name=_('Title'), max_length=255, unique=True)
     description = models.TextField(
         verbose_name=_('Description'), blank=True)
     created_by = models.ForeignKey(
