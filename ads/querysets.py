@@ -4,6 +4,10 @@ from django.utils import timezone
 
 class AdQuerySet(QuerySet):
 
+    def category_ads(self, category):
+        return self.filter(
+            category=category)
+
     def public(self):
         return self.filter(
             publication_date__lte=timezone.now(),
